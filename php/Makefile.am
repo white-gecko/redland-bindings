@@ -56,7 +56,7 @@ RUN=@REDLAND_RUN@
 SWIG_OPTS=-I$(srcdir) -DREDLAND_POST_I -DREDLAND_INIT_I -DREDLAND_DECL_I -DREDLAND_TYPEMAP_I
 
 $(PHP_PACKAGE)_wrap.c: @REDLAND_SWIG@ redland-decl.i redland-init.i redland-post.i redland-typemap.i
-	swig -v $(PHP_SWIG) $(SWIG_OPTS) -noproxy -module $(PHP_PACKAGE) -o $@ @REDLAND_SWIG@
+	swig3.0 -v $(PHP_SWIG) $(SWIG_OPTS) -noproxy -module $(PHP_PACKAGE) -o $@ @REDLAND_SWIG@
 	rm -f $(PHP_PACKAGE).php
 
 # -UHAVE_CONFIG_H to stop PHP trying to include config.h which
